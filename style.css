@@ -1,11 +1,11 @@
 :root{
-    --primary-color: #4de51eab;
-    --primary-hover: #425381;
-    --text-main: #1e211f;
-    --text-muted: #d9e711;
-    --bg-main: lab(100% 0.01 -0.01 / 0.605);
-    --bg-light: #d4c3c33f;
-    --border-color: #1060fff7;
+    --primary-color: #527A62;
+    --primary-hover: #3E624D;
+    --text-main: #2F342E;
+    --text-muted: #F1E8D7;
+    --bg-main: #F8F6F0;
+    --bg-light: #F0EDE4;
+    --border-color: #D8D2C4;
    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
    --font-family:'Open Sans',italic;
 }
@@ -18,6 +18,10 @@
     scroll-behavior:smooth;
  }
 
+ 
+ .slider {
+    scroll-margin-top: 90px;
+ }
 
  body{
     color:var(--text-main);
@@ -111,15 +115,22 @@ content:'';
     transform: scale(2.3);
 }
 
+.name h1{
+    color:#1D315B;
+}
+.name h1 span{
+    color:#F0791C;
+}
+
 #home{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.358),rgba(0, 0, 0, 0.385),rgba(0, 0, 0, 0.407)),url('images 2/kebun.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.358),rgba(0, 0, 0, 0.385),rgba(0, 0, 0, 0.407)),url('images 2/download (2).jpg');
     height: 100vh;
     background-size: cover;
     background-position: center;
     min-height: 100px;
 }
 #home-title h1 span{
-    color:yellowgreen;
+    color:#E7C98B;
 }
 
 .hero{
@@ -133,10 +144,13 @@ content:'';
     align-items: center;
     justify-content: center;
     gap: 40px;
-    width: 200%;
+    width: 100%;
 }
 .hero-text{
     flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
 }
 .hero-title{
     font-size: 3.5rem;
@@ -151,13 +165,16 @@ content:'';
 .hero-subtitle{
     font-size:1.4rem;
     color:var(--text-muted);
-    margin-bottom: 40px;
+    margin-bottom: 24px;
     max-width: 20%px;
     padding: 20px;
 }
 .hero-action{
     display:flex;
     gap:17px;
+    justify-content: flex-start;
+    margin-top: 0;
+    padding-left: 20px;
 }
 .btn{
     display:inline-block;
@@ -172,13 +189,21 @@ content:'';
     padding: 10px;
 }
 .btn-primary{
- background-color:rgb(23, 185, 26);
+ background-color:#527A62;
  color: #ffffff;
  box-shadow: 0 4px 6px rgb(0 0 0 / 0.1), 0 1px 3px rgb(0 0 0 / 0.06);
  
+ 
 }
+
+.hero-action a {
+    align-items: center;
+    
+}
+
+
 .btn-primary:hover{
-    background-color:yellowgreen;
+    background-color:#3E624D;
     transform: translateY(-6px);
     box-shadow:var(--primary-hover)
 }
@@ -188,7 +213,7 @@ content:'';
 }
 
 .bg-light {
-    background-color:#ffffff;
+    background-color:#F0EDE4;
 }
 
 .section-title {
@@ -222,6 +247,8 @@ content:'';
     font-size: 1.05rem;
     font-family: 'Poppins', sans-serif;
     font-weight:bold;
+    font-size:medium;
+    text-align:justify;
 }
 
 .about-image{
@@ -239,5 +266,95 @@ h1{
     color:var(--primary-color);
     margin-bottom: 20px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 10px;
+    padding: 20px;
+    align-items: center;
+}
+
+p{
+    padding: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.slider{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+figure{
+    position: relative;
+    left: 0;
+    width: 400%; /* width dikali slide */
+    animation: 10s slide infinite;
+}
+
+.slide{
+    position: relative;
+    width: 25%; /* width dibagi slide */
+    float: left;
+}
+
+.slide h1{
+    position: absolute;
+    font-size: 3em;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    color:#FFFFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.slide img{
+    width: 100%;
+    height: 600px;
+}
+
+@keyframes slide{
+    0%{
+        left:0;
+    }
+    10%{
+        left:0;
+    }
+    20%{
+        left:-100%;
+    }
+    30%{
+        left:-100%;
+    }
+    40%{
+        left:-200%;
+    }
+    50%{
+        left:-200%;
+    }
+    55%{
+        left:-300%;
+    }
+    65%{
+        left:-300%;
+    }
+    66%{
+        left:-200%;
+    }
+    74%{
+        left:-200%;
+    }
+    75%{
+        left:-100%;
+    }
+    85%{
+        left:-100%;
+    }
+    90%{
+        left:0;
+    }
+    1000%{
+        left:0;
+    }
 }
